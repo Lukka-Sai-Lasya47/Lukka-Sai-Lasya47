@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plant Drawing</title>
+</head>
+<body>
+  <canvas id="plantCanvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById("plantCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Draw the plant
+    function drawPlant() {
+      // Stem
+      ctx.beginPath();
+      ctx.moveTo(200, 400);
+      ctx.lineTo(200, 200);
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = "#804000";
+      ctx.stroke();
+
+      // Leaves
+      ctx.fillStyle = "#00b300";
+      ctx.beginPath();
+      ctx.moveTo(200, 200);
+      ctx.quadraticCurveTo(230, 150, 250, 200);
+      ctx.quadraticCurveTo(270, 150, 300, 200);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(200, 200);
+      ctx.quadraticCurveTo(170, 150, 150, 200);
+      ctx.quadraticCurveTo(130, 150, 100, 200);
+      ctx.fill();
+
+      // Flower
+      ctx.fillStyle = "#ff80bf";
+      ctx.beginPath();
+      ctx.arc(200, 150, 20, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Petals
+      ctx.fillStyle = "#ff99cc";
+      ctx.beginPath();
+      ctx.arc(200, 100, 15, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(240, 140, 15, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(160, 140, 15, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(200, 180, 15, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Call the drawPlant function to draw the plant on the canvas
+    drawPlant();
+  </script>
+</body>
+</html>
