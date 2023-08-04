@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0076d6;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .email-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .email-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .email-form input[type="text"],
+    .email-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    .email-form input[type="submit"] {
+      background-color: #0076d6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Email Webpage</h1>
+  </header>
+  
+  <div class="container">
+    <div class="email-form">
+      <form id="emailForm">
+        <label for="recipient">To:</label>
+        <input type="text" id="recipient" required>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" required>
+        <label for="message">Message:</label>
+        <textarea id="message" rows="6" required></textarea>
+        <input type="submit" value="Send Email">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Function to handle the form submission
+    function sendEmail(event) {
+      event.preventDefault();
+      const recipient = document.getElementById("recipient").value;
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value;
+
+      // Here, you can implement logic to send the email using an API or a backend service.
+      // This example does not include actual email sending functionality.
+      // You would need to integrate with an email service provider to achieve that.
+
+      // For testing purposes, you can use console.log to see the values you collected from the form.
+      console.log("Recipient: ", recipient);
+      console.log("Subject: ", subject);
+      console.log("Message: ", message);
+
+      // Reset the form after submission
+      document.getElementById("emailForm").reset();
+    }
+
+    // Attach the form submission handler to the form
+    document.getElementById("emailForm").addEventListener("submit", sendEmail);
+  </script>
+</body>
+</html>
