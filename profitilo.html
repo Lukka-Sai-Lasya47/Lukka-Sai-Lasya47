@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profitilo</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.input-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.output {
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Profitilo</h1>
+  <div class="input-group">
+    <input type="text" name="investment" placeholder="Investment">
+    <input type="text" name="years" placeholder="Years">
+    <button>Calculate</button>
+  </div>
+  <div class="output"></div>
+</div>
+<script>
+function calculateProfit() {
+  var investment = document.querySelector("input[name='investment']").value;
+  var years = document.querySelector("input[name='years']").value;
+
+  var profit = investment * (1 + 0.05) * years;
+
+  document.querySelector(".output").innerHTML = profit;
+}
+
+document.querySelector("button").addEventListener("click", calculateProfit);
+</script>
+</body>
+</html>
